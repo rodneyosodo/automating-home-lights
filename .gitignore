@@ -130,3 +130,9 @@ dmypy.json
 
 # Pycharm config
 .idea/
+
+# COnfig for mqtt and wifi
+config.py
+
+# Bin image
+*.bin
