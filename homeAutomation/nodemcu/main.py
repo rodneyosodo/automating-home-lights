@@ -50,17 +50,17 @@ def wifiConnect():
     print("INFO: Connecting to wifi")  
     ssid = config.WIFI_ESSID
     password = config.WIFI_PASSWORD
-    station = network.WLAN(network.STA_IF)# create station interface
-    station.active(True)# activate the interface
+    station = network.WLAN(network.STA_IF)  # create station interface
+    station.active(True)  # activate the interface
     if station.isconnected():
         print("INFO: Connected to wifi initially")
     else:
         while True:
             try:
-                scanned_wifi = station.scan()# scan for access points
+                scanned_wifi = station.scan()  # scan for access points
                 for i in scanned_wifi:
                     if i[0].decode('utf-8') == ssid:
-                        station.connect(ssid, password)
+                        station.connect(ssid, password)  # Connect to wifi
                         print("INFO: Connected to wifi")
                         break
                     else:
