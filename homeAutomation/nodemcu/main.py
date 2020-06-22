@@ -7,6 +7,7 @@ from umqtt.simple import MQTTClient
 ledPin = Pin(2, Pin.OUT)
 lights = Pin(5, Pin.OUT)
 
+
 def boardTest():
     print("INFO: Blinking LED")
     global ledPin    
@@ -16,15 +17,18 @@ def boardTest():
         i = i + 1
     print("INFO: Board is fine")
 
+
 def turn_on():
     global lights
     lights.value(1)
     print("INFO: Turning on lights")
 
+
 def turn_off():
     global lights
     lights.value(0)
     print("INFO: Turning off lights")  
+
 
 def wifiConnect():
     print("INFO: Connecting to wifi")  
@@ -49,7 +53,6 @@ def wifiConnect():
                 break
             except OSError as e:
                 print("Error: ", e)
-        
 
 
 def on_message(topic, msg):
@@ -73,6 +76,7 @@ def main():
     client.subscribe(topic)
     while True:
         client.wait_msg()
+
 
 if __name__ == "__main__":
     main()
