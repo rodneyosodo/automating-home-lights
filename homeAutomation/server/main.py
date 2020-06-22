@@ -2,18 +2,20 @@ from flask import Flask, request
 import paho.mqtt.client as mqtt
 from dotenv import load_dotenv
 import os
+
 load_dotenv(dotenv_path="broker.env")
 
 broker_url = os.getenv("MQTT_HOST")
 broker_port = int(os.getenv("MQTT_PORT"))
-topic = os.getenv("MQTT_TOPIC")
+mqtt_topic = os.getenv("MQTT_TOPIC")
 
 client = mqtt.Client()
 client.connect(broker_url, broker_port)
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+
+@app.route('/', methods=['POST', 'GET'])
 def publish():
     command = request.get_json()['queryResult']['queryText']
     if command.__contains__("on"):
