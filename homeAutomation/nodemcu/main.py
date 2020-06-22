@@ -9,6 +9,10 @@ lights = Pin(5, Pin.OUT)
 
 
 def boardTest():
+    """
+    Testing the board by blinking LED
+    :return:
+    """
     print("INFO: Blinking LED")
     global ledPin    
     for i in range(0, 4, 1):
@@ -19,18 +23,30 @@ def boardTest():
 
 
 def turn_on():
+    """
+    Turns on the lights
+    :return:
+    """
     global lights
     lights.value(1)
     print("INFO: Turning on lights")
 
 
 def turn_off():
+    """
+    Turns off the lights
+    :return:
+    """
     global lights
     lights.value(0)
     print("INFO: Turning off lights")  
 
 
 def wifiConnect():
+    """
+    Connects to the config wifi
+    :return:
+    """
     print("INFO: Connecting to wifi")  
     ssid = config.WIFI_ESSID
     password = config.WIFI_PASSWORD
@@ -56,6 +72,12 @@ def wifiConnect():
 
 
 def on_message(topic, msg):
+    """
+    This callback is used to process messages that are published to a subscribed topic.
+    :param topic:
+    :param msg:
+    :return:
+    """
     message = msg.decode("utf-8")
     if message == "ON":
         turn_on()
@@ -64,6 +86,11 @@ def on_message(topic, msg):
 
 
 def main():
+    """
+    Main function runs the board test, connects to wifi and mqtt server
+    and finally waits for oncoming messages
+    :return:
+    """
     boardTest()
     wifiConnect()
     print("INFO: Connecting to MQTT")
