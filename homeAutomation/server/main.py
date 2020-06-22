@@ -17,44 +17,48 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def publish():
-    command = request.get_json()['queryResult']['queryText']
-    if command.__contains__("on"):
+    if request.method == "GET":
+        return "Hello world"
+    elif request.method == "POST":
         global client
-        client.publish(topic="Lights", payload="ON", qos=0, retain=True)
-        return {
-            "payload": {
-                "google": {
-                    "expectUserResponse": True,
-                    "richResponse": {
-                        "items": [
-                            {
-                                "simpleResponse": {
-                                    "textToSpeech": "The lights are on"
-                                    }
-                            }
-                        ]
+        command = request.get_json()['queryResult']['queryText']
+        if command.__contains__("on"):
+            client.publish(topic=mqtt_topic, payload="ON", qos=0, retain=True)
+            return {
+                "payload": {
+                    "google": {
+                        "expectUserResponse": True,
+                        "richResponse": {
+                            "items": [
+                                {
+                                    "simpleResponse": {
+                                        "textToSpeech": "The lights are on"
+                                        }
+                                }
+                            ]
+                        }
                     }
                 }
             }
-        }  
-    else:
-        client.publish(topic="Lights", payload="OFF", qos=0, retain=True)
-        return {
-            "payload": {
-                "google": {
-                    "expectUserResponse": True,
-                    "richResponse": {
-                        "items": [
-                            {
-                                "simpleResponse": {
-                                    "textToSpeech": "The lights are off"
-                                    }
-                            }
-                        ]
+        else:
+            client.publish(topic=mqtt_topic, payload="OFF", qos=0, retain=True)
+            return {
+                "payload": {
+                    "google": {
+                        "expectUserResponse": True,
+                        "richResponse": {
+                            "items": [
+                                {
+                                    "simpleResponse": {
+                                        "textToSpeech": "The lights are off"
+                                        }
+                                }
+                            ]
+                        }
                     }
                 }
             }
-        }   
+
 
 if __name__ == "__main__":
     app.run()
