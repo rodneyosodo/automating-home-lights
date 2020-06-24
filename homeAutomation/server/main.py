@@ -18,7 +18,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def publish():
     if request.method == "GET":
-        return "Hello world"
+        return "Server is up"
     elif request.method == "POST":
         global client
         command = request.get_json()['queryResult']['queryText']
@@ -61,4 +61,4 @@ def publish():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000)
