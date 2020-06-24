@@ -4,6 +4,7 @@ A demonstration of using nodemcu connected to a solid state relay to switch on a
 ![Python package](https://github.com/0x6f736f646f/automating-home-lights/workflows/Python%20package/badge.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/354b85bbab1b5c60ee52/maintainability)](https://codeclimate.com/github/0x6f736f646f/backend-blog-application/maintainability)
 [![CodeFactor](https://www.codefactor.io/repository/github/0x6f736f646f/automating-home-lights/badge)](https://www.codefactor.io/repository/github/0x6f736f646f/automating-home-lights)
+[![Build Status](https://travis-ci.com/0x6f736f646f/automating-home-lights.svg?branch=master)](https://travis-ci.com/0x6f736f646f/automating-home-lights)
 
 ## Dependencies
 
