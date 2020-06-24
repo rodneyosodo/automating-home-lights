@@ -1,3 +1,0 @@
-"""
-I do not know
-"""
