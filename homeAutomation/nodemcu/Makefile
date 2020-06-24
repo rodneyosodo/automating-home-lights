@@ -12,4 +12,15 @@ upload: main.py config.py
 	ampy $(AFLAG) config.py
 	ampy $(AFLAG) main.py
 
+start-docker:
+	docker run --rm --name=mqtt -d -p 1883:1883 -p 9001:9001 eclipse-mosquitto
+
+stop-docker:
+	docker stop mqtt
+
+start-ngrok:
+	sleep 5
+	ngrok tcp 1883
+
 all: erase flash upload
+start-mqtt: start-docker start-ngrok
