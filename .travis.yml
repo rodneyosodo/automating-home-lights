@@ -16,13 +16,10 @@ before_install:
 - export MQTT_HOST='127.0.0.1'
 - export MQTT_PORT=1883
 - export MQTT_TOPIC='Lights'
-- echo "MQTT_HOST='127.0.0.1'\nMQTT_PORT=1883\nMQTT_TOPIC='Lights'" > broker.env
-- cat broker.env
-# - export COVERALLS_REPO_TOKEN=$API_USERNAME
 
 script:
   - flake8 homeAutomation
-  - pytest --cov=homeAutomation --cov-report=html tests
+  - pytest --cov=homeAutomation --cov-report= tests
 
 after_success:
   - coveralls
