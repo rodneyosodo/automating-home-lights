@@ -18,7 +18,7 @@ before_install:
 
 script:
   - flake8 homeAutomation
-  - pytest homeAutomation
+  - pytest --cov=homeAutomation --cov-report=html tests
 
 after_success:
   - coveralls
