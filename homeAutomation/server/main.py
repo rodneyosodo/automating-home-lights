@@ -40,7 +40,7 @@ def publish():
                     }
                 }
             }
-        else:
+        elif command.__contains__("off"):
             client.publish(topic=mqtt_topic, payload="OFF", qos=0, retain=True)
             return {
                 "payload": {
@@ -51,6 +51,25 @@ def publish():
                                 {
                                     "simpleResponse": {
                                         "textToSpeech": "The lights are off"
+                                        }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        else:
+            return {
+                "payload": {
+                    "google": {
+                        "expectUserResponse": True,
+                        "richResponse": {
+                            "items": [
+                                {
+                                    "simpleResponse": {
+                                        "textToSpeech":
+                                            "Do you want to turn "
+                                            "on or off the lights"
                                         }
                                 }
                             ]
