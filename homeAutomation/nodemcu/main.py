@@ -114,5 +114,15 @@ class HomeAutomation:
             client.wait_msg()
 
 
+def run():
+    homeautomation = HomeAutomation(ledpin=2, lightpin=5,
+                                    ssid=config.WIFI_ESSID,
+                                    password=config.WIFI_PASSWORD,
+                                    host=config.MQTT_HOST,
+                                    port=config.MQTT_PORT,
+                                    topic=config.MQTT_TOPIC)
+    homeautomation.main()
+
+
 if __name__ == "__main__":
     run()
