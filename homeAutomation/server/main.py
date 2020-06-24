@@ -19,64 +19,63 @@ app = Flask(__name__)
 def publish():
     if request.method == "GET":
         return "Server is up"
-    elif request.method == "POST":
-        global client
-        command = request.get_json()['queryResult']['queryText']
-        if command.__contains__("on"):
-            client.publish(topic=mqtt_topic, payload="ON", qos=0, retain=True)
-            return {
-                "payload": {
-                    "google": {
-                        "expectUserResponse": True,
-                        "richResponse": {
-                            "items": [
-                                {
-                                    "simpleResponse": {
-                                        "textToSpeech": "The lights are on"
-                                        }
-                                }
-                            ]
-                        }
+    global client
+    command = request.get_json()['queryResult']['queryText']
+    if command.__contains__("on"):
+        client.publish(topic=mqtt_topic, payload="ON", qos=0, retain=True)
+        return {
+            "payload": {
+                "google": {
+                    "expectUserResponse": True,
+                    "richResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "The lights are on"
+                                    }
+                            }
+                        ]
                     }
                 }
             }
-        elif command.__contains__("off"):
-            client.publish(topic=mqtt_topic, payload="OFF", qos=0, retain=True)
-            return {
-                "payload": {
-                    "google": {
-                        "expectUserResponse": True,
-                        "richResponse": {
-                            "items": [
-                                {
-                                    "simpleResponse": {
-                                        "textToSpeech": "The lights are off"
-                                        }
-                                }
-                            ]
-                        }
+        }
+    elif command.__contains__("off"):
+        client.publish(topic=mqtt_topic, payload="OFF", qos=0, retain=True)
+        return {
+            "payload": {
+                "google": {
+                    "expectUserResponse": True,
+                    "richResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "The lights are off"
+                                    }
+                            }
+                        ]
                     }
                 }
             }
-        else:
-            return {
-                "payload": {
-                    "google": {
-                        "expectUserResponse": True,
-                        "richResponse": {
-                            "items": [
-                                {
-                                    "simpleResponse": {
-                                        "textToSpeech":
-                                            "Do you want to turn "
-                                            "on or off the lights"
-                                        }
-                                }
-                            ]
-                        }
+        }
+    else:
+        return {
+            "payload": {
+                "google": {
+                    "expectUserResponse": True,
+                    "richResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech":
+                                        "Do you want to turn "
+                                        "on or off the lights"
+                                    }
+                            }
+                        ]
                     }
                 }
             }
+        }
 
 
 if __name__ == "__main__":
