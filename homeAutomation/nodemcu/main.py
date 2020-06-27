@@ -33,7 +33,7 @@ class HomeAutomation:
         :return:
         """
         print("INFO: Blinking LED")
-        for i in range(0, 4, 1):
+        for i in range(0, 5, 1):
             self.ledpin.value(not self.ledpin.value())
             sleep(1)
             i = i + 1
