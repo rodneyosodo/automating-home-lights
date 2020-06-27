@@ -7,6 +7,89 @@ A demonstration of using nodemcu connected to a solid state relay to switch on a
 [![Build Status](https://travis-ci.com/0x6f736f646f/automating-home-lights.svg?branch=master)](https://travis-ci.com/0x6f736f646f/automating-home-lights)
 [![Coverage Status](https://coveralls.io/repos/github/0x6f736f646f/automating-home-lights/badge.svg?branch=master)](https://coveralls.io/github/0x6f736f646f/automating-home-lights?branch=master)
 
+## Prerequistes
+
+#### Software
+* Docker
+* Ngrok
+* LocalXpose
+* Make
+* Python3
+* Putty
+* esptool
+* ampy
+
+#### Hardware
+* Nodemcu
+* Jumper wires
+* Solid state relay
+* Extension cable
+* Lamp
+
+## Getting started
+To get this project up and running on your machine, follow the following instructions.
+
+#### Dialogflow
+Check out the documentation to get yourself up and running with the dialogflow agent
+
+#### Hardware
+Check out the documentation to setup the hardware
+
+#### Programming
+This instructions will be different for windows users.
+
+```shell
+mkdir projectHomeAutomation
+cd projectHomeAutomation
+virtualenv --no-site-packages --python=python3 venv
+source venv/bin/activate
+git clone https://github.com/0x6f736f646f/automating-home-lights
+cd automating-home-lights
+pip3 install -r requirements.txt
+```
+
+#### Getting started with micropython
+
+
+#### Getting started with dialogflow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Dependencies
 
 - Git flow:
