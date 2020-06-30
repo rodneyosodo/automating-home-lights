@@ -59,6 +59,7 @@ Incoming Request
 
 When DialogFlow detects an intent it will send a complex JSON object to your webhook. And there’s only one webhook for all the intents. So we’re going to filter and route on what is called the action.
 
+
 ```python
 # Flask micro framework
 from flask import Flask, request
@@ -152,6 +153,10 @@ if __name__ == "__main__":
 ```
 
 You can either set this to the value you want or simply let DialogFlow generate the action’s name for you.
+
+![](https://i.imgur.com/6tEm7OK.jpg)
+
+![](https://i.imgur.com/kWyuWFp.jpg)
 
 
 We’re now able to receive the request DialogFlow sends to our webhook, thus we can route on the action field. This will allow us to receive different parameters and contexts depending on which intent matched.
