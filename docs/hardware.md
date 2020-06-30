@@ -59,6 +59,7 @@ You’ll also need to place the relay module in line with the AC powered device 
 
 If your AC device is going to be off for most of the time, and you occasionally want to turn it on, you should connect the other to NO. Connect to NC if the device will be on for most of the time.
 
+![](https://i.imgur.com/Rbzywjb.jpg)
 
 
 ### Programming
