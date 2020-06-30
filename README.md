@@ -32,13 +32,13 @@ A demonstration of using nodemcu connected to a solid state relay to switch on a
 To get this project up and running on your machine, follow the following instructions.
 
 #### Dialogflow
-Check out the wiki to get yourself up and running with the dialogflow agent
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to get yourself up and running with the dialogflow agent
 
 #### Hardware
-Check out the wiki to setup the hardware
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to setup the hardware
 
 #### Micropython
-Check out the wiki to setup micropython
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to setup micropython
 
 #### Programming
 This instructions will be different for windows users.
