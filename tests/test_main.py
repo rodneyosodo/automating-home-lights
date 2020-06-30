@@ -48,3 +48,43 @@ def test_publish_2(client):
     response = post_json(client, '/', example_response)
     assert response.status_code == 200
     assert json_of_response(response)['payload']['google']['richResponse']['items'][0]['simpleResponse']['textToSpeech'] == "The lights are on"
+
+def test_publish_3(client):
+    example_response = {'responseId': '3d######-####-####-####-############-######d2',
+                        'queryResult': {'queryText': 'Turn off lights',
+                                        'parameters': {},
+                                        'allRequiredParamsPresent': True,
+                                        'fulfillmentMessages': [
+                                            {'text': {'text': ['']}}
+                                        ], 'outputContexts': [{
+                                                                  'name': 'projects/nodemcu-#####/agent/sessions/3c######-####-####-####-##########42/contexts/__system_counters__',
+                                                                  'parameters': {'no-input': 0.0, 'no-match': 0.0}}],
+                                        'intent': {
+                                            'name': 'projects/nodemcu-#####/agent/intents/88######-####-####-####-##########b6',
+                                            'displayName': 'Turn on or off led'}, 'intentDetectionConfidence': 1.0,
+                                        'languageCode': 'en'}, 'originalDetectIntentRequest': {'payload': {}},
+                        'session': 'projects/nodemcu-#####/agent/sessions/3c######-####-####-####-##########42'}
+
+    response = post_json(client, '/', example_response)
+    assert response.status_code == 200
+    assert json_of_response(response)['payload']['google']['richResponse']['items'][0]['simpleResponse']['textToSpeech'] == "The lights are off"
+
+def test_publish_4(client):
+    example_response = {'responseId': '3d######-####-####-####-############-######d2',
+                        'queryResult': {'queryText': 'lights',
+                                        'parameters': {},
+                                        'allRequiredParamsPresent': True,
+                                        'fulfillmentMessages': [
+                                            {'text': {'text': ['']}}
+                                        ], 'outputContexts': [{
+                                                                  'name': 'projects/nodemcu-#####/agent/sessions/3c######-####-####-####-##########42/contexts/__system_counters__',
+                                                                  'parameters': {'no-input': 0.0, 'no-match': 0.0}}],
+                                        'intent': {
+                                            'name': 'projects/nodemcu-#####/agent/intents/88######-####-####-####-##########b6',
+                                            'displayName': 'Turn on or off led'}, 'intentDetectionConfidence': 1.0,
+                                        'languageCode': 'en'}, 'originalDetectIntentRequest': {'payload': {}},
+                        'session': 'projects/nodemcu-#####/agent/sessions/3c######-####-####-####-##########42'}
+
+    response = post_json(client, '/', example_response)
+    assert response.status_code == 200
+    assert json_of_response(response)['payload']['google']['richResponse']['items'][0]['simpleResponse']['textToSpeech'] == "Do you want to turn on or off the lights"
