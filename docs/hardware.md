@@ -59,25 +59,21 @@ You’ll also need to place the relay module in line with the AC powered device 
 
 If your AC device is going to be off for most of the time, and you occasionally want to turn it on, you should connect the other to NO. Connect to NC if the device will be on for most of the time.
 
+
+
 ### Programming
 
-```cpp
-int RelayPin = PA6;//declaring the pin to which input pin of relay module is connected.
+```python
+from machine import Pin
+from time import sleep
 
-void setup() {
-    // Set RelayPin as an output pin
-    pinMode(RelayPin, OUTPUT);
-}
+# declaring the pin to which input pin of relay module is connected and Set RelayPin as an output pin
+relayPin = Pin(5, Pin.OUT) 
 
-void loop() {
-    // Let's turn on the relay...
-    digitalWrite(RelayPin, LOW);//pulls the pin LOW
-    delay(3000);
-
-    // Let's turn off the relay...
-    digitalWrite(RelayPin, HIGH);//pulls the pin HIGH.
-    delay(3000);
-}
+while True:
+    # Turns on and off the relaypin at intervals of 3 seconds
+    relayPin.value(not relayPin.value())
+    sleep(3000)
 ```
 
 ## APPLICATIONS
