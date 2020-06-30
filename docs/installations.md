@@ -62,5 +62,20 @@ Go to [https://www.putty.org/](https://www.putty.org/) and download the windows 
 
 Voila, you are set and ready to go and explore the MicroPython World.
 
-![](https://i.imgur.com/xhqKobv.png)
+
+9. Install docker
+
+    Go to the official [docker page](https://www.docker.com/get-started) and install docker
+    
+10. Install ngrok
+
+    Go to the official [ngrok website](https://ngrok.com/download) and install ngrok
+
+11. Install ampy
+
+    Go to the official [ampy github page](https://github.com/scientifichackers/ampy) and install ampy
+    
+12. Install localxpose
+
+    Go to the official [localxpose website](https://localxpose.io/#download) and install localxpose
 
