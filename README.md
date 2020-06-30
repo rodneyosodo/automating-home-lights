@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/0x6f736f646f/automating-home-lights)
+
 # automating-home-lights
 A demonstration of using nodemcu connected to a solid state relay to switch on and off lights using google assistant
 
