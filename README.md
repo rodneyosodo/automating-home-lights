@@ -29,16 +29,16 @@ A demonstration of using nodemcu connected to a solid state relay to switch on a
 * [Lamp](https://www.amazon.com/Limelights-LT2024-GRY-Brushed-Charging-Outlet/dp/B075Z643G4/ref=sxin_9_ac_d_rm?ac_md=0-0-bGFtcA%3D%3D-ac_d_rm&cv_ct_cx=lamp&dchild=1&keywords=lamp&pd_rd_i=B075Z643G4&pd_rd_r=7f4912db-809b-48fc-abbd-8a21e0827c56&pd_rd_w=zc3Lo&pd_rd_wg=mTBoM&pf_rd_p=dc697a3c-c4bf-4bf1-bf88-86b22dd0aad3&pf_rd_r=4AQD4QVQE9VAX33T1Z0F&psc=1&qid=1593528538&sr=1-1-12d4272d-8adb-4121-8624-135149aa9081)
 
 ## Getting started
-To get this project up and running on your machine, follow the following instructions.
+To get this project up and running on your machine, follow the following instructions. Head over to the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) section
 
 #### Dialogflow
-Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to get yourself up and running with the dialogflow agent
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki/Dialogflow-setup) to get yourself up and running with the dialogflow agent
 
 #### Hardware
-Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to setup the hardware
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki/Hardware-setup) to setup the hardware
 
 #### Micropython
-Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki) to setup micropython
+Check out the [wiki](https://github.com/0x6f736f646f/automating-home-lights/wiki/Micropython-setup) to setup micropython
 
 #### Programming
 This instructions will be different for windows users.
