@@ -28,7 +28,7 @@ pytest-instafail==0.4.2
 pytest-repeat==0.8.0
 pytest-stress==1.0.1
 python-dotenv==0.13.0
-requests==2.24.0
+requests==2.31.0
 six==1.15.0
 urllib3==1.25.9
 wcwidth==0.2.5
